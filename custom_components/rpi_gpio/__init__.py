@@ -1,6 +1,6 @@
 """Support for controlling GPIO pins of a Raspberry Pi."""
 
-from RPi import GPIO  # pylint: disable=import-error
+from OPi import GPIO  # pylint: disable=import-error
 
 from homeassistant.const import (
     EVENT_HOMEASSISTANT_START,
