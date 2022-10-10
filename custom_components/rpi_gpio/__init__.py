@@ -1,7 +1,7 @@
 """Support for controlling GPIO pins of a Raspberry Pi."""
 
 from OPi import GPIO  # pylint: disable=import-error
-import orangepi.4
+import orangepi.pi4
 from homeassistant.const import (
     EVENT_HOMEASSISTANT_START,
     EVENT_HOMEASSISTANT_STOP,
@@ -30,7 +30,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
         hass.bus.listen_once(EVENT_HOMEASSISTANT_STOP, cleanup_gpio)
 
     hass.bus.listen_once(EVENT_HOMEASSISTANT_START, prepare_gpio)
-    GPIO.setmode(orangepi.4.BOARD)
+    GPIO.setmode(orangepi.pi4.BOARD)
     return True
 
 
